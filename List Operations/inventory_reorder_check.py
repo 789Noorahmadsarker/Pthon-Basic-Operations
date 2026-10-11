@@ -46,7 +46,7 @@ print("Items to Reorder:")
 for product in reorder_list:
     print(f"- {product}")
 
-# Output:
+# Sample Output:
 # Items to Reorder:
 # - Pears
 # - Grapes

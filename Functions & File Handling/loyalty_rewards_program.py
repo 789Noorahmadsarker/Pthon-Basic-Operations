@@ -36,10 +36,10 @@ customers_dict = {}
 
 # "with" closes the file automatically once the block ends
 with open("customers.txt", "r") as f:
-    for line in f:
+    for lin in f:
         # strip() removes the trailing newline, split(",") separates the
         # name from the amount, e.g. "John,250" -> ["John", "250"]
-        customer_name, total_amount = line.strip().split(",")
+        customer_name, total_amount = lin.strip().split(",")
 
         # The amount is read as text, so convert it to an integer
         total_amount = int(total_amount)

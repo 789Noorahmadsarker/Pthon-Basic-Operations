@@ -52,3 +52,39 @@ print(customers_dict)
 
 # Output:
 # {'Srinivas': 120, 'John': 250, 'Maria': 150, 'Smith': 510, 'Anjali': 45}
+
+
+
+# ---------------------------------------------------------------------------
+# Task 2: Define a function to calculate the rewards level
+# ---------------------------------------------------------------------------
+# Question:
+#   Define a function called calculate_rewards that takes the total purchase
+#   amount as input and returns the rewards level:
+#       Bronze: Total purchases $100-$199
+#       Silver: Total purchases $200-$499
+#       Gold:   Total purchases $500+
+
+def calculate_rewards(total):
+    """Return the rewards level ('Gold', 'Silver', 'Bronze' or 'None')
+    for a given total purchase amount."""
+    # Conditions are checked from the highest level to the lowest, so each
+    # one only needs a lower limit
+    if total >= 500:
+        return 'Gold'
+    elif total >= 200:
+        return 'Silver'
+    elif total >= 100:
+        return 'Bronze'
+    else:
+        # Totals below $100 do not qualify for any rewards level
+        return 'None'
+
+
+print("\nTask 2:")
+print(calculate_rewards(530))
+
+# Output:
+# Gold
+
+

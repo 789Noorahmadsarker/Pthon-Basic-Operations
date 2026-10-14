@@ -88,3 +88,31 @@ print(calculate_rewards(530))
 # Gold
 
 
+
+# ---------------------------------------------------------------------------
+# Task 3: Build the customer summary dictionary
+# ---------------------------------------------------------------------------
+# Question:
+#   For each customer in customers_dict, calculate the rewards level and
+#   build a customer_summary dictionary. The key is the customer's name and
+#   the value is a tuple containing the total amount and the rewards level.
+
+# Dictionary to store {customer_name: (total_amount, rewards_level)}
+customer_summary = {}
+
+# items() gives us each name and its total amount at the same time
+for name, total in customers_dict.items():
+    rewards_level = calculate_rewards(total)
+    customer_summary[name] = (total, rewards_level)
+
+print("\nTask 3:")
+print(customer_summary)
+
+# Output (printed on one line, wrapped here for readability):
+# {'Srinivas': (120, 'Bronze'),
+#  'John': (250, 'Silver'),
+#  'Maria': (150, 'Bronze'),
+#  'Smith': (510, 'Gold'),
+#  'Anjali': (45, 'None')}
+
+

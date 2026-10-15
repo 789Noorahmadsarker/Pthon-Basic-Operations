@@ -116,3 +116,40 @@ print(customer_summary)
 #  'Anjali': (45, 'None')}
 
 
+
+# ---------------------------------------------------------------------------
+# Task 4: Combine everything into a single function
+# ---------------------------------------------------------------------------
+# Question:
+#   Stitch all of the above code together and create a function that takes a
+#   file name as input and returns the customer_summary dictionary.
+
+def process_customer_data(file_name):
+    """Read a customer file (name,amount per line) and return a dictionary
+    of {customer_name: (total_amount, rewards_level)}."""
+    # Step 1: read the file into a dictionary (Task 1)
+    customers = {}
+    with open(file_name, "r") as f:
+        for line in f:
+            customer_name, total_amount = line.strip().split(",")
+            customers[customer_name] = int(total_amount)
+
+    # Step 2: categorize each customer and prepare the summary (Tasks 2 and 3)
+    summary = {}
+    for name, total in customers.items():
+        summary[name] = (total, calculate_rewards(total))
+
+    return summary
+
+
+print("\nTask 4:")
+print(process_customer_data("customers.txt"))
+
+# Output (printed on one line, wrapped here for readability):
+# {'Srinivas': (120, 'Bronze'),
+#  'John': (250, 'Silver'),
+#  'Maria': (150, 'Bronze'),
+#  'Smith': (510, 'Gold'),
+#  'Anjali': (45, 'None')}
+
+

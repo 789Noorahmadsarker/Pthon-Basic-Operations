@@ -142,5 +142,33 @@ with open("love.txt", "w") as f:
  
 # love.txt now contains:
 # I love javascript
+
+
+
+# ---------------------------------------------------------------------------
+# 2.3  Append mode ("a")
+# ---------------------------------------------------------------------------
+# Append mode keeps the existing content and adds new text at the end.
+# Note: write() does not add a newline automatically, so the new text joins
+# the previous line. Add "\n" yourself if you want it on a new line.
+with open("love.txt", "a") as f:
+    f.write("I love python")
+ 
+# love.txt now contains:
+# I love javascriptI love python
+ 
+ 
+# ---------------------------------------------------------------------------
+# 2.4  writelines(): write a list of strings
+# ---------------------------------------------------------------------------
+# writelines() writes every string in the list, one after another.
+# It does NOT insert line breaks, so include "\n" where a new line is needed.
+# This uses "w" mode, so it replaces the previous content as well.
+with open("love.txt", "w") as f:
+    f.writelines(["I love C++\n", "I love scala"])
+ 
+# love.txt now contains:
+# I love C++
+# I love scala
  
 

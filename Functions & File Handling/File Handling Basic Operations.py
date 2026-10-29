@@ -96,3 +96,51 @@ with open("funny.txt", "r") as f:
 # ['Teacher: Why are you late, raghu?\n', 'Raghu: Because of the sign\n',
 #  'Teacher: What sign?\n', 'Raghu: The one that says "School Ahead, Go slow"']
 # (printed on a single line; wrapped here for readability)
+
+
+
+
+
+# ===========================================================================
+#   PART 2 OF 4  |  WRITING FILES
+# ===========================================================================
+#
+#   Context:
+#       Writing lets a program save its results. The file mode you choose
+#       decides whether existing content is replaced or preserved.
+#
+#   File modes cheat sheet:
+#       "r"  ->  Read    : file must exist; cannot write
+#       "w"  ->  Write   : creates the file, or ERASES it if it exists
+#       "a"  ->  Append  : creates the file, or adds to the END if it exists
+#
+#   This part uses love.txt.
+# ===========================================================================
+ 
+# ---------------------------------------------------------------------------
+# 2.1  Write mode ("w")
+# ---------------------------------------------------------------------------
+# If love.txt already exists, its old content is erased before writing.
+print("\n" + "=" * 60)
+print("PART 2  |  Writing files")
+print("=" * 60)
+ 
+with open("love.txt", "w") as f:
+    f.write("I love python")
+ 
+# love.txt now contains:
+# I love python
+ 
+ 
+# ---------------------------------------------------------------------------
+# 2.2  Write mode overwrites previous content
+# ---------------------------------------------------------------------------
+# Writing again in "w" mode replaces whatever was there before: the earlier
+# line "I love python" disappears and only the new line remains.
+with open("love.txt", "w") as f:
+    f.write("I love javascript")
+ 
+# love.txt now contains:
+# I love javascript
+ 
+
